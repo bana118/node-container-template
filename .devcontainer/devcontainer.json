@@ -1,5 +1,9 @@
 {
   "name": "project-name",
   "dockerFile": "Dockerfile",
-  "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
 }
