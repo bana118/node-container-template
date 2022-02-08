@@ -14,10 +14,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      # - name: Check git tag
+      #   uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
+      #   env:
+      #     GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      #   with:
+      #     strategy: package
+      #     tag_prefix: "v"
+      #     dry_run: true
       - name: Setup Node
         uses: actions/setup-node@v2
-        with:
-          node-version: "14"
+        # with:
+        #   node-version: "14.16.1"
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -33,11 +41,3 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn lint
-      # - name: Check git tag
-      #   uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
-      #   env:
-      #     GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      #   with:
-      #     strategy: package
-      #     tag_prefix: "v"
-      #     dry_run: true

@@ -1,4 +1,5 @@
-FROM node:14.16.1-slim
+FROM node:slim
+# FROM node:14.16.1-slim
 
 RUN apt update \
     && apt install -y --no-install-recommends \
